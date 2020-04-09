@@ -1,0 +1,67 @@
+/*Transcript*/
+
+.ttpane {
+    padding: 6px 25px 10px 10px;
+    background-color: #ffffff;
+    position: absolute;
+    border: 3px solid #2576AE;
+    height: 75px;
+    width: 290px;
+    color: #333333;
+    bottom: 77px;
+    left: 35px;
+}
+
+.ttpane ul {
+    padding: 0 0 0 20px;
+}
+
+.ttpane ol {
+    margin-bottom: 5px;
+}
+
+.ttpane li {
+    margin-bottom: 5px;
+    list-style: disc;
+}
+
+.transcript {
+    padding: 0px 10px 0px 0px;
+    height: 60px;
+    font-size: 14px;
+    overflow: auto;
+    -webkit-overflow: auto;
+}
+
+#transcript p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.ttCloseBtn {
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0px 5px;
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    z-index: 5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.ttCloseBtn:hover {
+    color: #FFFFFF;
+}
+
+.ttCloseBtnBg {
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-top: 25px solid #2576AE;
+    border-left: 28px solid transparent;
+    top: 0px;
+    right: 0px;
+}

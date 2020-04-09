@@ -1,27 +1,36 @@
 import React, { useState } from "react";
 import CourseTitle from "./CourseTitle";
+import Help from "./Help";
+import ExitConfirmation from "./ExitConfirmation";
 
 import "./Header.css";
 
-function Header() {
-  const [isHelpOpen, setHelpOpen] = useState(false);
+function Header({
+  isHelpOpen,
+  toggleHelp,
+  enableHeader,
+  toggleExitConfirmation,
+  isExitPopupOpen,
+}) {
   return (
     <div className="header">
       <div className="logo">
         <img alt="logo" src="images/logo.png" />
       </div>
       <CourseTitle />
-      <div className="langBtn"></div>
-      <div className="helpBtn" onClick={() => setHelpOpen(true)}></div>
-      <div className="exitBtn"></div>
-      {isHelpOpen && (
-        <div className="helpWrap">
-          <div className="helpCloseBtn" onClick={() => setHelpOpen(false)}>
-            X
-          </div>
-          <img alt="close" className="help_bg" src="images/help_en.png" />
-        </div>
-      )}
+      <div className={enableHeader ? "langBtn" : "langBtnDisabled"}></div>
+
+      <Help
+        isHelpOpen={isHelpOpen}
+        enableHeader={enableHeader}
+        toggleHelp={toggleHelp}
+      />
+
+      <ExitConfirmation
+        isExitPopupOpen={isExitPopupOpen}
+        enableHeader={enableHeader}
+        toggleExitConfirmation={toggleExitConfirmation}
+      />
     </div>
   );
 }

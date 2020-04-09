@@ -1,0 +1,63 @@
+/*for exitPopup*/
+.exitWrap {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.exit {
+    border: 3px solid #2576AE;
+    min-height: 160px;
+    margin: 250px auto;
+    width: 35%;
+    background-color: #ffffff;
+    min-width: 245px;
+}
+
+.exitInfo {
+    height: 91%;
+    width: 100%;
+}
+
+.exitInfo div:first-child {
+    min-height: 40px;
+    font-size: 16px;
+}
+
+.exitInfo>div {
+    margin: 10px;
+    overflow: hidden;
+    overflow-y: auto;
+    text-align: center;
+}
+
+.exitInfo div:last-child {
+    margin-top: 10px;
+}
+
+.exitInfo div:last-child div {
+    display: inline-block;
+}
+
+.exitInfo div:last-child div a:last-child {
+    margin-left: 10px;
+}
+
+.exitHeader {
+    min-height: 31px;
+    width: 100%;
+    background-color: #2576AE;
+    display: inline-block;
+    position: relative;
+    color: #ffffff;
+}
+
+.exitHeader>div {
+    font-size: 16px;
+    float: left;
+    margin: 3px 10px 3px 10px;
+}

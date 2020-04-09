@@ -1,22 +1,25 @@
 import React from "react";
 import "./PlayerButtons.css";
 
-function PlayerButtons() {
+function PlayerButtons({ toggleTranscript, enablePlayer }) {
   return (
     <div className="footer">
       <ul>
         <div align="center">
-          <li className="menuBtn"></li>
-          <li className="ttBtn"></li>
-          <li className="audioBtn"></li>
+          <li className={enablePlayer ? "menuBtn" : "menuBtnDisabled"}></li>
+          <li
+            className={enablePlayer ? "ttBtn" : "ttBtnDisabled"}
+            onClick={toggleTranscript}
+          ></li>
+          <li className={enablePlayer ? "audioBtn" : "audioBtnDisabled"}></li>
           <div className="volumeSlider"></div>
-          <li className="replayBtn"></li>
-          <li className="pauseBtn"></li>
-          <li className="backBtn"></li>
+          <li className={enablePlayer ? "replayBtn" : "replayBtnDisabled"}></li>
+          <li className={enablePlayer ? "pauseBtn" : "pauseBtnDisabled"}></li>
+          <li className={enablePlayer ? "backBtn" : "backBtnDisabled"}></li>
           <div className="pagecounter">
             <div className="currentPageNum">Page 00/00</div>
           </div>
-          <li className="nextBtn"></li>
+          <li className={enablePlayer ? "nextBtn" : "nextBtnDisabled"}></li>
         </div>
       </ul>
     </div>
