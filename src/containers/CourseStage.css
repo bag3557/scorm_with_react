@@ -1,0 +1,10 @@
+.wrapper {
+    position: relative;
+    background-image: url(/images/player_bg.png);
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    padding: 0px;
+    width: 1010px;
+    height: 670px;
+    display: block;
+}
