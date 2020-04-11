@@ -6,7 +6,8 @@ import { openHelp, closeHelp } from "../actions/playerActions";
 
 function Help({ help, openHelp, closeHelp }) {
   const onHelpClick = () => {
-    !help.isOpen ? openHelp() : closeHelp();
+    !help.isOpen && help.isEnabled && openHelp();
+    help.isOpen && help.isEnabled && closeHelp();
   };
   return (
     <React.Fragment>

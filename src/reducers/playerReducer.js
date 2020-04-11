@@ -7,6 +7,10 @@ import {
   HIDE_HELP,
   OPEN_EXIT_CONFIRMATION_MODAL,
   CLOSE_EXIT_CONFIRMATION_MODAL,
+  DISABLE_NEXT,
+  ENABLE_NEXT,
+  DISABLE_BACK,
+  ENABLE_BACK,
 } from "../actions/types";
 
 const initialState = {
@@ -39,7 +43,6 @@ export default function(state = initialState, action) {
         back: { isEnabled: false },
         next: { isEnabled: false },
       };
-      break;
 
     case HIDE_TRANSCRIPT:
       return {
@@ -54,7 +57,6 @@ export default function(state = initialState, action) {
         back: { isEnabled: true },
         next: { isEnabled: true },
       };
-      break;
 
     case OPEN_MENU:
       return {
@@ -69,7 +71,6 @@ export default function(state = initialState, action) {
         back: { isEnabled: false },
         next: { isEnabled: false },
       };
-      break;
 
     case HIDE_MENU:
       return {
@@ -84,7 +85,6 @@ export default function(state = initialState, action) {
         back: { isEnabled: true },
         next: { isEnabled: true },
       };
-      break;
 
     case OPEN_HELP:
       return {
@@ -99,7 +99,6 @@ export default function(state = initialState, action) {
         back: { isEnabled: false },
         next: { isEnabled: false },
       };
-      break;
 
     case HIDE_HELP:
       return {
@@ -114,7 +113,6 @@ export default function(state = initialState, action) {
         back: { isEnabled: true },
         next: { isEnabled: true },
       };
-      break;
 
     case OPEN_EXIT_CONFIRMATION_MODAL:
       return {
@@ -129,7 +127,6 @@ export default function(state = initialState, action) {
         back: { isEnabled: false },
         next: { isEnabled: false },
       };
-      break;
 
     case CLOSE_EXIT_CONFIRMATION_MODAL:
       return {
@@ -144,10 +141,27 @@ export default function(state = initialState, action) {
         back: { isEnabled: true },
         next: { isEnabled: true },
       };
-      break;
-
+    case DISABLE_NEXT:
+      return {
+        ...state,
+        next: { isEnabled: false },
+      };
+    case ENABLE_NEXT:
+      return {
+        ...state,
+        next: { isEnabled: true },
+      };
+    case DISABLE_BACK:
+      return {
+        ...state,
+        back: { isEnabled: false },
+      };
+    case ENABLE_BACK:
+      return {
+        ...state,
+        back: { isEnabled: true },
+      };
     default:
-      break;
+      return state;
   }
-  return state;
 }

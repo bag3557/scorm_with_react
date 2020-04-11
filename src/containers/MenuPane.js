@@ -1,13 +1,9 @@
 import React from "react";
-import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import { closeMenu } from "../actions/playerActions";
-
 import "./MenuPane.css";
-import { topics } from "../courseMap";
 
-function MenuPane({ closeMenu }) {
+const MenuPane = ({ closeMenu, topics }) => {
   return (
     <div className="menuPane">
       <div className="menuCloseBtnBg"></div>
@@ -15,21 +11,21 @@ function MenuPane({ closeMenu }) {
         X
       </div>
       <div className="header">
-        <div className="topics">Topics</div>
-        <div className="subTopics">Sub Topics</div>
+        <div className="topics">Topic Name</div>
+        <div className="subTopics">Subtopic Name</div>
         <div className="pages">Pages</div>
       </div>
       <div className="topicsContainer">
         <div className="topicSubCont">
           {topics.map((topic) => {
             const lessons = topic.screens.map((screen, index) => (
-              <div id="en_0_0_1" className="p1 pageTitleCont">
+              <div key={screen.title} className="p1 pageTitleCont">
                 <div className="pageTitle">{screen.title}</div>
                 <div className="pageNum">{index + 1}</div>
               </div>
             ));
             return (
-              <div>
+              <div key={topic.title}>
                 <div className="topicTitleCont">
                   <div className="topicTitle">{topic.title}</div>
                 </div>
@@ -41,9 +37,12 @@ function MenuPane({ closeMenu }) {
       </div>
     </div>
   );
-}
-
-const mapDispatchToProps = {
-  closeMenu: closeMenu,
 };
-export default connect(null, mapDispatchToProps)(MenuPane);
+
+MenuPane.propTypes = {
+  topics: PropTypes.array.isRequired,
+  topic: PropTypes.number.isRequired,
+  lesson: PropTypes.number.isRequired,
+};
+
+export default MenuPane;

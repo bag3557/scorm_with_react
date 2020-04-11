@@ -1,11 +1,15 @@
 import React from "react";
 
-export default function LessonTitle() {
+const LessonTitle = ({ currentTopicTitle, currentLessonTitle }) => {
   return (
     <div className="lessonTitleWrap">
       <div className="lessonTitleSubWrap">
-        <div className="lessonTitle">Lesson Number 100</div>
+        <div className="lessonTitle">
+          {currentTopicTitle} > {currentLessonTitle}
+        </div>
       </div>
     </div>
   );
-}
+};
+
+export default LessonTitle;

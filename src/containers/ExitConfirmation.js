@@ -15,9 +15,8 @@ function ExitConfirmation({
   closeExitConfirmationModal,
 }) {
   const onExitClick = () => {
-    !exitModal.isOpen
-      ? openExitConfirmationModal()
-      : closeExitConfirmationModal();
+    !exitModal.isOpen && exitModal.isEnabled && openExitConfirmationModal();
+    exitModal.isOpen && exitModal.isEnabled && closeExitConfirmationModal();
   };
   return (
     <React.Fragment>

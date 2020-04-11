@@ -7,15 +7,28 @@ import {
   closeTranscript,
   openMenu,
   closeMenu,
+  disableNextButton,
+  enableNextButton,
+  disableBackButton,
+  enableBackButton,
 } from "../actions/playerActions";
+
+import { loadNextSlide, loadPrevSlide } from "../actions/courseActions";
+
+import {
+  getSlidesCount,
+  getCurrentSlideNumber,
+  getNextSlideCount,
+  getBackSlideCount,
+} from "../utils";
+
 import "./PlayerButtons.css";
 
 function PlayerButtons({
+  topics,
+  topic,
+  lesson,
   isPlayerEnabled,
-  openTranscript,
-  closeTranscript,
-  openMenu,
-  closeMenu,
   transcript,
   menu,
   audio,
@@ -23,12 +36,56 @@ function PlayerButtons({
   pause,
   back,
   next,
+  openTranscript,
+  closeTranscript,
+  loadNextSlide,
+  loadPrevSlide,
+  disableBackButton,
+  enableBackButton,
+  disableNextButton,
+  enableNextButton,
+  openMenu,
+  closeMenu,
 }) {
-  const onTranscriptClick = () =>
-    !transcript.isOpen ? openTranscript() : closeTranscript();
+  const totalSlides = getSlidesCount(topics);
+  const currentSlide = getCurrentSlideNumber(topics, topic, lesson);
+
+  const onTranscriptClick = () => {
+    !transcript.isOpen && transcript.isEnabled && openTranscript();
+    transcript.isOpen && transcript.isEnabled && closeTranscript();
+  };
 
   const onMenuClick = () => {
-    !menu.isOpen ? openMenu() : closeMenu();
+    !menu.isOpen && menu.isEnabled && openMenu();
+    menu.isOpen && menu.isEnabled && closeMenu();
+  };
+
+  const onNextClick = () => {
+    const nextSlideNumber = getNextSlideCount(topics, topic, lesson);
+    if (next.isEnabled) {
+      loadNextSlide({
+        topic: nextSlideNumber.topic,
+        lesson: nextSlideNumber.lesson,
+      });
+      enableBackButton();
+      if (totalSlides === currentSlide + 1) {
+        disableNextButton();
+      }
+    }
+  };
+
+  const onBackClick = () => {
+    const backSlideNumber = getBackSlideCount(topics, topic, lesson);
+    if (back.isEnabled) {
+      loadPrevSlide({
+        topic: backSlideNumber.topic,
+        lesson: backSlideNumber.lesson,
+      });
+      enableNextButton();
+      if (currentSlide - 2 === 0) {
+        disableBackButton();
+      }
+    }
   };
 
   return (
@@ -56,11 +113,19 @@ function PlayerButtons({
           <li
             className={pause.isEnabled ? "pauseBtn" : "pauseBtnDisabled"}
           ></li>
-          <li className={back.isEnabled ? "backBtn" : "backBtnDisabled"}></li>
+          <li
+            className={back.isEnabled ? "backBtn" : "backBtnDisabled"}
+            onClick={onBackClick}
+          ></li>
           <div className="pagecounter">
-            <div className="currentPageNum">Page 00/00</div>
+            <div className="currentPageNum">
+              Page {currentSlide}/{totalSlides}
+            </div>
           </div>
-          <li className={next.isEnabled ? "nextBtn" : "nextBtnDisabled"}></li>
+          <li
+            className={next.isEnabled ? "nextBtn" : "nextBtnDisabled"}
+            onClick={onNextClick}
+          ></li>
         </div>
       </ul>
     </div>
@@ -75,6 +140,9 @@ PlayerButtons.propTypes = {
   pause: PropTypes.object.isRequired,
   back: PropTypes.object.isRequired,
   next: PropTypes.object.isRequired,
+  topics: PropTypes.array.isRequired,
+  topic: PropTypes.number.isRequired,
+  lesson: PropTypes.number.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -85,7 +153,9 @@ const mapStateToProps = (state) => ({
   pause: state.player.pause,
   back: state.player.back,
   next: state.player.next,
-  isPlayerEnabled: state.player,
+  topics: state.course.topics,
+  topic: state.course.progress.topic,
+  lesson: state.course.progress.lesson,
 });
 
 const mapDispatchToProps = {
@@ -93,6 +163,12 @@ const mapDispatchToProps = {
   closeTranscript: closeTranscript,
   openMenu: openMenu,
   closeMenu: closeMenu,
+  loadNextSlide: loadNextSlide,
+  disableNextButton: disableNextButton,
+  enableNextButton: enableNextButton,
+  loadPrevSlide: loadPrevSlide,
+  disableBackButton: disableBackButton,
+  enableBackButton: enableBackButton,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlayerButtons);
