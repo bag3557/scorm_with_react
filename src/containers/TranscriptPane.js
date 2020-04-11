@@ -1,12 +1,14 @@
 import React from "react";
+import { connect } from "react-redux";
 
+import { closeTranscript } from "../actions/playerActions";
 import "./TranscriptPane.css";
 
-function TranscriptPane(props) {
+function TranscriptPane({ closeTranscript }) {
   return (
     <div className="ttpane">
       <div className="ttCloseBtnBg"></div>
-      <div className="ttCloseBtn" onClick={props.toggleTranscript}>
+      <div className="ttCloseBtn" onClick={closeTranscript}>
         X
       </div>
       <div className="transcript">
@@ -16,4 +18,7 @@ function TranscriptPane(props) {
   );
 }
 
-export default TranscriptPane;
+const mapDispatchToProps = {
+  closeTranscript: closeTranscript,
+};
+export default connect(null, mapDispatchToProps)(TranscriptPane);

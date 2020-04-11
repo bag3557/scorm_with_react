@@ -61,3 +61,14 @@
     float: left;
     margin: 3px 10px 3px 10px;
 }
+
+.agreeToClose,
+.disagreeToClose {
+    cursor: pointer;
+}
+
+.agreeToClose:hover,
+.disagreeToClose:hover {
+    cursor: pointer;
+    background-color: #2576AE;
+}

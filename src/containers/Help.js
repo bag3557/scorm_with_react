@@ -1,15 +1,22 @@
 import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
-function Help({ toggleHelp, enableHeader, isHelpOpen }) {
+import { openHelp, closeHelp } from "../actions/playerActions";
+
+function Help({ help, openHelp, closeHelp }) {
+  const onHelpClick = () => {
+    !help.isOpen ? openHelp() : closeHelp();
+  };
   return (
     <React.Fragment>
       <div
-        className={enableHeader ? "helpBtn" : "helpBtnDisabled"}
-        onClick={toggleHelp}
+        className={help.isEnabled ? "helpBtn" : "helpBtnDisabled"}
+        onClick={onHelpClick}
       ></div>
-      {isHelpOpen && (
+      {help.isOpen && (
         <div className="helpWrap">
-          <div className="helpCloseBtn" onClick={toggleHelp}>
+          <div className="helpCloseBtn" onClick={onHelpClick}>
             X
           </div>
           <img alt="close" className="help_bg" src="images/help_en.png" />
@@ -19,4 +26,17 @@ function Help({ toggleHelp, enableHeader, isHelpOpen }) {
   );
 }
 
-export default Help;
+Help.propTypes = {
+  help: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  help: state.player.help,
+});
+
+const mapDispatchToProps = {
+  openHelp: openHelp,
+  closeHelp: closeHelp,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Help);

@@ -6,7 +6,6 @@
     top: 600px;
 }
 
-
 .menuBtn {
     height: 36px;
     width: 36px;
@@ -55,8 +54,7 @@
     cursor: default;
 }
 
-
-.ttBtn {
+.transcriptBtn {
     height: 36px;
     width: 36px;
     display: block;
@@ -69,11 +67,11 @@
     position: absolute;
 }
 
-.ttBtn:hover {
+.transcriptBtn:hover {
     background-position: -792px 0px;
 }
 
-.ttOffBtn {
+.transcriptOffBtn {
     height: 36px;
     width: 36px;
     display: block;
@@ -86,11 +84,11 @@
     position: absolute;
 }
 
-.ttOffBtn:hover {
+.transcriptOffBtn:hover {
     background-position: -792px 0px;
 }
 
-.ttBtnDisabled {
+.transcriptBtnDisabled {
     height: 36px;
     width: 36px;
     display: block;
@@ -316,7 +314,6 @@
     vertical-align: middle;
     height: 100%;
 }
-
 
 .nextBtn {
     height: 36px;

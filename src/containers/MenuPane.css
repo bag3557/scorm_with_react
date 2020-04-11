@@ -1,0 +1,222 @@
+.topicSubCont div {
+    margin: 5px 0px;
+}
+
+.menuPane {
+    background-image: url(/images/menu_bg.png);
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    position: absolute;
+    height: 519px;
+    width: 562px;
+    top: 72px;
+    left: 35px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.menuCloseBtn {
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 1px 7px;
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    z-index: 5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menuCloseBtn:hover {
+    color: #FFFFFF;
+}
+
+.menuCloseBtnBg {
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-top: 35px solid #2576AE;
+    border-left: 38px solid transparent;
+    top: 0px;
+    right: 0px;
+}
+
+.menuPane .header {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    width: 479px;
+    height: 28px;
+    position: absolute;
+    top: 19px;
+    left: 38px;
+    text-align: center;
+}
+
+.menuPane .header .topics {
+    width: 119px;
+    padding-top: 4px;
+    float: left;
+}
+
+.menuPane .header .subTopics {
+    width: 286px;
+    padding-top: 4px;
+    float: left;
+}
+
+.menuPane .header .pages {
+    width: 74px;
+    padding-top: 4px;
+    float: left;
+}
+
+.menuPane .topicsContainer {
+    color: #333333;
+    font-size: 16px;
+    width: 550px;
+    height: 424px;
+    position: absolute;
+    top: 67px;
+    left: 25px;
+    padding-right: 8px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 14px;
+}
+
+.menuPane .topicSubCont {
+    width: 90%;
+    background: rgba(109, 155, 174, 0.5);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    float: left;
+}
+
+.menuPane .topicTitleCont {
+    width: 100px;
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 5px;
+    display: table;
+    float: left;
+    margin: 1px;
+    height: 100px;
+}
+
+.menuPane .topicTitle {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.menuPane .pageTitleCont {
+    height: 22px;
+    width: 340px;
+    margin-top: 10px;
+    margin-left: 122px;
+    display: table;
+    cursor: pointer;
+
+}
+
+.pageTitleCont .pageTitle {
+    background-color: #F5F5F5;
+}
+
+.pageTitleCont .pageNum {
+    background-color: #F5F5F5;
+}
+
+.menuPane .pageTitleContActive {
+    height: 22px;
+    width: 334px;
+    margin-top: 10px;
+    margin-left: 122px;
+    display: table;
+    cursor: default;
+
+}
+
+.pageTitleContActive .pageTitle {
+    background-color: #5BFFF1;
+}
+
+.pageTitleContActive .pageNum {
+    background-color: #5BFFF1;
+}
+
+.menuPane .pageTitleContDisbled {
+    height: 22px;
+    width: 334px;
+    margin-top: 10px;
+    margin-left: 122px;
+    display: table;
+
+}
+
+.pageTitleContDisbled .pageTitle {
+    background-color: #CDCDCD;
+}
+
+.pageTitleContDisbled .pageNum {
+    background-color: #CDCDCD;
+}
+
+.menuPane .pageTitleContVisited {
+    height: 22px;
+    width: 334px;
+    margin-top: 10px;
+    margin-left: 122px;
+    display: table;
+    cursor: pointer;
+
+}
+
+.pageTitleContVisited .pageTitle {
+    background-color: #CDCDCD;
+}
+
+.pageTitleContVisited .pageNum {
+    background-color: #CDCDCD;
+}
+
+.menuPane .pageTitle {
+    width: 260px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    -moz-box-shadow: inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 10px 0 2px #d0d0d0;
+}
+
+.menuPane .pageTitleArabic {
+    width: 260px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: right;
+    padding-right: 25px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.menuPane .pageNum {
+    width: 40px;
+    margin-left: 14px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 6px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}

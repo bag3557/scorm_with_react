@@ -1,19 +1,32 @@
 import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+
+import {
+  openExitConfirmationModal,
+  closeExitConfirmationModal,
+} from "../actions/playerActions";
+
 import "./ExitConfirmation.css";
 
 function ExitConfirmation({
-  isExitPopupOpen,
-  toggleExitConfirmation,
-  enableHeader,
+  exitModal,
+  openExitConfirmationModal,
+  closeExitConfirmationModal,
 }) {
+  const onExitClick = () => {
+    !exitModal.isOpen
+      ? openExitConfirmationModal()
+      : closeExitConfirmationModal();
+  };
   return (
     <React.Fragment>
       <div
-        className={enableHeader ? "exitBtn" : "exitBtnDisabled"}
-        onClick={toggleExitConfirmation}
+        className={exitModal.isEnabled ? "exitBtn" : "exitBtnDisabled"}
+        onClick={onExitClick}
       ></div>
 
-      {isExitPopupOpen && (
+      {exitModal.isOpen && (
         <div className="exitWrap">
           <div className="exit">
             <div className="exitHeader">
@@ -21,8 +34,12 @@ function ExitConfirmation({
             </div>
             <div className="exitInfo">
               <div>Are you sure you want to exit this course?</div>
-              <div>Yes</div>
-              <div>No</div>
+              <div onClick={onExitClick} class="agreeToClose">
+                Yes
+              </div>
+              <div onClick={onExitClick} class="disagreeToClose">
+                No
+              </div>
             </div>
           </div>
         </div>
@@ -31,4 +48,18 @@ function ExitConfirmation({
   );
 }
 
-export default ExitConfirmation;
+ExitConfirmation.propTypes = {
+  exitModal: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  exitModal: state.player.exitModal,
+  isPlayerEnabled: state.player.isPlayerEnabled,
+});
+
+const mapDispatchToProps = {
+  openExitConfirmationModal: openExitConfirmationModal,
+  closeExitConfirmationModal: closeExitConfirmationModal,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ExitConfirmation);
