@@ -8,7 +8,6 @@ export const getSlidesCount = (topics) => {
 };
 
 export const getCurrentSlideNumber = (topics, topic, lesson) => {
-  const totalSlideCount = getSlidesCount(topics);
   let currentCount = 0;
   for (let i = 0; i < topics.length; i++) {
     const screens = topics[i].screens;
@@ -38,9 +37,6 @@ export const getNextSlideCount = (topics, topic, lesson) => {
 };
 
 export const getBackSlideCount = (topics, topic, lesson) => {
-  const totalTopics = topics.length;
-  const lessonsInCurrentTopic = topics[topic].screens.length;
-
   if (lesson > 0 && topic >= 0) {
     return {
       topic: topic,

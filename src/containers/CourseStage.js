@@ -23,6 +23,7 @@ const CourseStage = ({
 }) => {
   const currentTopicTitle = topics[topic].title;
   const currentLessonTitle = topics[topic].screens[lesson].title;
+  const currentLessonTranscript = topics[topic].screens[lesson].transcript;
 
   return (
     <div className="fullscreen_container">
@@ -32,11 +33,13 @@ const CourseStage = ({
           currentTopicTitle={currentTopicTitle}
           currentLessonTitle={currentLessonTitle}
         />
-        <SlideContainer />
+        <SlideContainer currentTopic={topics[topic].screens[lesson]} />
 
         <PlayerButtons />
 
-        {transcript.isOpen && <TranscriptPane />}
+        {transcript.isOpen && (
+          <TranscriptPane transcriptText={currentLessonTranscript} />
+        )}
 
         {menu.isOpen && (
           <MenuPane

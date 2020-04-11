@@ -6,6 +6,7 @@ export const topics = [
       {
         title: "Welcome",
         transcript: "Welcome",
+        animationName: "lishtml5",
       },
       {
         title: "Course Introduction & Objectives",

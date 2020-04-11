@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { closeTranscript } from "../actions/playerActions";
 import "./TranscriptPane.css";
 
-function TranscriptPane({ closeTranscript }) {
+function TranscriptPane({ closeTranscript, transcriptText }) {
   return (
     <div className="ttpane">
       <div className="ttCloseBtnBg"></div>
@@ -12,7 +12,7 @@ function TranscriptPane({ closeTranscript }) {
         X
       </div>
       <div className="transcript">
-        <p>Lorem</p>
+        <p>{transcriptText}</p>
       </div>
     </div>
   );

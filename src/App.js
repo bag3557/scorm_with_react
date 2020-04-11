@@ -19,15 +19,8 @@ class App extends Component {
     Scorm.finish();
   }
 
-  updateAssesment(correct, response) {
-    // Scorm.submitMCQ(correct, response);
-  }
-
   startCourse = () => {
     this.setState({ courseStarted: true, lessonStarted: true });
-    // setTimeout(() => {
-    //   this.setState({ lessonStarted: true });
-    // }, 200);
   };
 
   render() {

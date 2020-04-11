@@ -4,7 +4,7 @@ import { topics } from "../courseMap";
 const initialState = {
   topics: topics,
   progress: {
-    topic: 1,
+    topic: 0,
     lesson: 0,
   },
 };
