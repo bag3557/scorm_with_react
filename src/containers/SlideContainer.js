@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import Animation from "../components/common/Animation";
-import { stage, pageContainer } from "./SlideContainerStyles";
+import Animation from '../components/common/Animation';
+import { stage, pageContainer } from '../styles/SlideContainerStyles';
 
 function SlideContainer({ currentTopic }) {
   return (

@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 import {
   courseTitleWrap,
   courseTitleSubWrap,
   courseTitle
-} from "./HeaderStyles";
+} from '../styles/HeaderStyles';
 
 const CourseTitle = props => {
   return (

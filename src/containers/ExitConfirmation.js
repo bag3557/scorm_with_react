@@ -1,11 +1,11 @@
-import React from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import {
   openExitConfirmationModal,
   closeExitConfirmationModal
-} from "../actions/playerActions";
+} from '../actions/playerActions';
 
 import {
   exitWrap,
@@ -17,7 +17,7 @@ import {
   disagreeToClose,
   exitBtn,
   exitBtnDisabled
-} from "./ExitConfirmationStyles.js";
+} from '../styles/ExitConfirmationStyles.js';
 
 function ExitConfirmation({
   exitModal,

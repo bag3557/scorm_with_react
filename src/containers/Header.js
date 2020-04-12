@@ -1,9 +1,9 @@
-import React from "react";
-import CourseTitle from "./CourseTitle";
-import Help from "./Help";
-import ExitConfirmation from "./ExitConfirmation";
+import React from 'react';
+import CourseTitle from './CourseTitle';
+import Help from './Help';
+import ExitConfirmation from './ExitConfirmation';
 
-import { header, logo, langBtn, langBtnDisabled } from "./HeaderStyles";
+import { header, logo, langBtn, langBtnDisabled } from '../styles/HeaderStyles';
 
 function Header({ enableHeader, toggleExitConfirmation, isExitPopupOpen }) {
   return (

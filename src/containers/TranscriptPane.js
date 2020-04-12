@@ -1,14 +1,14 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
-import { closeTranscript } from "../actions/playerActions";
+import { closeTranscript } from '../actions/playerActions';
 import {
   ttpane,
   ttCloseBtnBg,
   ttCloseBtn,
   transcript,
   transcriptPara
-} from "./TranscriptPaneStyles.js";
+} from '../styles/TranscriptPaneStyles.js';
 
 function TranscriptPane({ closeTranscript, transcriptText }) {
   return (

@@ -1,6 +1,6 @@
-import React from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import {
   openTranscript,
@@ -11,16 +11,16 @@ import {
   enableNextButton,
   disableBackButton,
   enableBackButton
-} from "../actions/playerActions";
+} from '../actions/playerActions';
 
-import { loadNextSlide, loadPrevSlide } from "../actions/courseActions";
+import { loadNextSlide, loadPrevSlide } from '../actions/courseActions';
 
 import {
   getSlidesCount,
   getCurrentSlideNumber,
   getNextSlideCount,
   getBackSlideCount
-} from "../utils";
+} from '../utils';
 
 import {
   footer,
@@ -41,7 +41,7 @@ import {
   nextBtnDisabled,
   pagecounter,
   currentPageNum
-} from "./PlayerButtonsStyles.js";
+} from '../styles/PlayerButtonsStyles.js';
 
 function PlayerButtons({
   topics,

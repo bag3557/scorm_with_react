@@ -1,18 +1,18 @@
-import React from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-import Header from "./Header";
-import LessonTitle from "./LessonTitle";
-import SlideContainer from "./SlideContainer";
-import PlayerButtons from "./PlayerButtons";
-import TranscriptPane from "./TranscriptPane";
-import MenuPane from "./MenuPane";
+import Header from './Header';
+import LessonTitle from './LessonTitle';
+import SlideContainer from './SlideContainer';
+import PlayerButtons from './PlayerButtons';
+import TranscriptPane from './TranscriptPane';
+import MenuPane from './MenuPane';
 
-import { closeMenu } from "../actions/playerActions";
+import { closeMenu } from '../actions/playerActions';
 
-import { wrapper } from "./CourseStageStyles";
-import { fullscreen_container } from "../AppStyles";
+import { wrapper } from '../styles/CourseStageStyles';
+import { fullscreen_container } from '../AppStyles';
 
 const CourseStage = ({
   closeMenu,

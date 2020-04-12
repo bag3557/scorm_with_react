@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 import {
   lessonTitle,
   lessonTitleSubWrap,
   lessonTitleWrap
-} from "./HeaderStyles";
+} from '../styles/HeaderStyles';
 
 const LessonTitle = ({ currentTopicTitle, currentLessonTitle }) => {
   return (
