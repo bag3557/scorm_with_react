@@ -15,7 +15,7 @@ function Header({ enableHeader, toggleExitConfirmation, isExitPopupOpen }) {
 
       <CourseTitle />
 
-      <div style={enableHeader ? { langBtn } : { langBtnDisabled }}></div>
+      <div style={enableHeader ? langBtn : langBtnDisabled}></div>
 
       <Help />
 
