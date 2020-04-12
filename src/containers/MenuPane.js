@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./MenuPane.css";
+import "../styles/MenuPane.css";
 
 const MenuPane = ({ closeMenu, topics }) => {
   return (
@@ -17,7 +17,7 @@ const MenuPane = ({ closeMenu, topics }) => {
       </div>
       <div className="topicsContainer">
         <div className="topicSubCont">
-          {topics.map((topic) => {
+          {topics.map(topic => {
             const lessons = topic.screens.map((screen, index) => (
               <div key={screen.title} className="p1 pageTitleCont">
                 <div className="pageTitle">{screen.title}</div>
@@ -42,7 +42,7 @@ const MenuPane = ({ closeMenu, topics }) => {
 MenuPane.propTypes = {
   topics: PropTypes.array.isRequired,
   topic: PropTypes.number.isRequired,
-  lesson: PropTypes.number.isRequired,
+  lesson: PropTypes.number.isRequired
 };
 
 export default MenuPane;

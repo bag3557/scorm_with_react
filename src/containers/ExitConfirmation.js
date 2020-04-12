@@ -31,7 +31,7 @@ function ExitConfirmation({
   return (
     <React.Fragment>
       <div
-        style={exitModal.isEnabled ? { exitBtn } : { exitBtnDisabled }}
+        style={exitModal.isEnabled ? exitBtn : exitBtnDisabled}
         onClick={onExitClick}
       ></div>
 
