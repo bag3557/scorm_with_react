@@ -5,18 +5,18 @@ export const topics = [
     screens: [
       {
         title: "Welcome",
-        transcript: "Welcome",
-        animationName: "lishtml5",
+        transcript: "Welcome"
+        // animationName: "lishtml5",
       },
       {
         title: "Course Introduction & Objectives",
-        transcript: "Course Introduction & Objectives",
+        transcript: "Course Introduction & Objectives"
       },
       {
         title: "Pre-Quiz",
-        transcript: "Pre-Quiz",
-      },
-    ],
+        transcript: "Pre-Quiz"
+      }
+    ]
   },
   //Topic 00 ended
 
@@ -26,17 +26,17 @@ export const topics = [
     screens: [
       {
         title: "Welcome",
-        transcript: "Welcome",
+        transcript: "Welcome"
       },
       {
         title: "Course Introduction & Objectives",
-        transcript: "Course Introduction & Objectives",
+        transcript: "Course Introduction & Objectives"
       },
       {
         title: "Pre-Quiz",
-        transcript: "Pre-Quiz",
-      },
-    ],
+        transcript: "Pre-Quiz"
+      }
+    ]
   },
   //Topic 01 ended
 
@@ -46,17 +46,17 @@ export const topics = [
     screens: [
       {
         title: "Welcome",
-        transcript: "Welcome",
+        transcript: "Welcome"
       },
       {
         title: "Course Introduction & Objectives",
-        transcript: "Course Introduction & Objectives",
+        transcript: "Course Introduction & Objectives"
       },
       {
         title: "Pre-Quiz",
-        transcript: "Pre-Quiz",
-      },
-    ],
+        transcript: "Pre-Quiz"
+      }
+    ]
   },
   //Topic 02 ended
 
@@ -66,17 +66,17 @@ export const topics = [
     screens: [
       {
         title: "Welcome",
-        transcript: "Welcome",
+        transcript: "Welcome"
       },
       {
         title: "Course Introduction & Objectives",
-        transcript: "Course Introduction & Objectives",
+        transcript: "Course Introduction & Objectives"
       },
       {
         title: "Pre-Quiz",
-        transcript: "Pre-Quiz",
-      },
-    ],
+        transcript: "Pre-Quiz"
+      }
+    ]
   },
   //Topic 03 ended
 
@@ -86,17 +86,17 @@ export const topics = [
     screens: [
       {
         title: "Welcome",
-        transcript: "Welcome",
+        transcript: "Welcome"
       },
       {
         title: "Course Introduction & Objectives",
-        transcript: "Course Introduction & Objectives",
+        transcript: "Course Introduction & Objectives"
       },
       {
         title: "Pre-Quiz",
-        transcript: "Pre-Quiz",
-      },
-    ],
+        transcript: "Pre-Quiz"
+      }
+    ]
   },
   //Topic 04 ended
 
@@ -106,17 +106,17 @@ export const topics = [
     screens: [
       {
         title: "Welcome",
-        transcript: "Welcome",
+        transcript: "Welcome"
       },
       {
         title: "Course Introduction & Objectives",
-        transcript: "Course Introduction & Objectives",
+        transcript: "Course Introduction & Objectives"
       },
       {
         title: "Pre-Quiz",
-        transcript: "Pre-Quiz",
-      },
-    ],
+        transcript: "Pre-Quiz"
+      }
+    ]
   },
   //Topic 05 ended
 
@@ -126,17 +126,17 @@ export const topics = [
     screens: [
       {
         title: "Welcome",
-        transcript: "Welcome",
+        transcript: "Welcome"
       },
       {
         title: "Course Introduction & Objectives",
-        transcript: "Course Introduction & Objectives",
+        transcript: "Course Introduction & Objectives"
       },
       {
         title: "Pre-Quiz",
-        transcript: "Pre-Quiz",
-      },
-    ],
-  },
+        transcript: "Pre-Quiz"
+      }
+    ]
+  }
   //Topics ended
 ];

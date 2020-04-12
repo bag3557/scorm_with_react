@@ -1,7 +1,17 @@
 import React, { Component } from "react";
-import "./App.css";
-import Scorm from "./scorm/Scorm";
+import Radium from "radium";
 
+import Scorm from "./scorm/Scorm";
+import {
+  fullscreen_container,
+  fullscreen_subContainer,
+  loaderStage,
+  launchBtn,
+  loader,
+  loaderImg
+} from "./AppStyles";
+
+import loading from "./images/loading.gif";
 import CourseStage from "./containers/CourseStage";
 
 class App extends Component {
@@ -11,7 +21,7 @@ class App extends Component {
     this.state = {
       learnerName: Scorm.getLearnerName(),
       courseStarted: false,
-      lessonStarted: false,
+      lessonStarted: false
     };
   }
 
@@ -25,22 +35,23 @@ class App extends Component {
 
   render() {
     const { courseStarted, lessonStarted } = this.state;
+
     return (
       <React.Fragment>
         {courseStarted ? (
           lessonStarted ? (
             <CourseStage />
           ) : (
-            <div className="loaderStage">
-              <div className="loader">
-                <img alt="loading" src="/images/loading.gif"></img>
+            <div style={loaderStage}>
+              <div style={loader}>
+                <img alt="loading" style={loaderImg} src={loading}></img>
               </div>
             </div>
           )
         ) : (
-          <div className="fullscreen_container">
-            <div className="fullscreen_subContainer">
-              <div className="launchBtn" onClick={this.startCourse}></div>
+          <div style={fullscreen_container}>
+            <div style={fullscreen_subContainer}>
+              <div style={launchBtn} onClick={this.startCourse}></div>
             </div>
           </div>
         )}
@@ -49,4 +60,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Radium(App);

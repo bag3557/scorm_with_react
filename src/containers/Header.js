@@ -3,18 +3,18 @@ import CourseTitle from "./CourseTitle";
 import Help from "./Help";
 import ExitConfirmation from "./ExitConfirmation";
 
-import "./Header.css";
+import { header, logo, langBtn, langBtnDisabled } from "./HeaderStyles";
 
 function Header({ enableHeader, toggleExitConfirmation, isExitPopupOpen }) {
   return (
-    <div className="header">
-      <div className="logo">
+    <div style={header}>
+      <div style={logo}>
         <img alt="logo" src="images/logo.png" />
       </div>
 
       <CourseTitle />
 
-      <div className={enableHeader ? "langBtn" : "langBtnDisabled"}></div>
+      <div style={enableHeader ? { langBtn } : { langBtnDisabled }}></div>
 
       <Help />
 

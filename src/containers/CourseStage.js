@@ -11,7 +11,8 @@ import MenuPane from "./MenuPane";
 
 import { closeMenu } from "../actions/playerActions";
 
-import "./CourseStage.css";
+import { wrapper } from "./CourseStageStyles";
+import { fullscreen_container } from "../AppStyles";
 
 const CourseStage = ({
   closeMenu,
@@ -19,15 +20,15 @@ const CourseStage = ({
   menu,
   topics,
   topic,
-  lesson,
+  lesson
 }) => {
   const currentTopicTitle = topics[topic].title;
   const currentLessonTitle = topics[topic].screens[lesson].title;
   const currentLessonTranscript = topics[topic].screens[lesson].transcript;
 
   return (
-    <div className="fullscreen_container">
-      <div className="wrapper">
+    <div style={fullscreen_container}>
+      <div style={wrapper}>
         <Header />
         <LessonTitle
           currentTopicTitle={currentTopicTitle}
@@ -59,19 +60,19 @@ CourseStage.propTypes = {
   menu: PropTypes.object.isRequired,
   topics: PropTypes.array.isRequired,
   topic: PropTypes.number.isRequired,
-  lesson: PropTypes.number.isRequired,
+  lesson: PropTypes.number.isRequired
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   transcript: state.player.transcript,
   menu: state.player.menu,
   topics: state.course.topics,
   topic: state.course.progress.topic,
-  lesson: state.course.progress.lesson,
+  lesson: state.course.progress.lesson
 });
 
 const mapDispatchToProps = {
-  closeMenu: closeMenu,
+  closeMenu: closeMenu
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CourseStage);

@@ -10,7 +10,7 @@ import {
   disableNextButton,
   enableNextButton,
   disableBackButton,
-  enableBackButton,
+  enableBackButton
 } from "../actions/playerActions";
 
 import { loadNextSlide, loadPrevSlide } from "../actions/courseActions";
@@ -19,10 +19,29 @@ import {
   getSlidesCount,
   getCurrentSlideNumber,
   getNextSlideCount,
-  getBackSlideCount,
+  getBackSlideCount
 } from "../utils";
 
-import "./PlayerButtons.css";
+import {
+  footer,
+  menuBtn,
+  menuBtnDisabled,
+  transcriptBtn,
+  transcriptBtnDisabled,
+  audioBtn,
+  audioBtnDisabled,
+  volumeSlider,
+  replayBtn,
+  replayBtnDisabled,
+  pauseBtn,
+  pauseBtnDisabled,
+  backBtn,
+  backBtnDisabled,
+  nextBtn,
+  nextBtnDisabled,
+  pagecounter,
+  currentPageNum
+} from "./PlayerButtonsStyles.js";
 
 function PlayerButtons({
   topics,
@@ -45,7 +64,7 @@ function PlayerButtons({
   disableNextButton,
   enableNextButton,
   openMenu,
-  closeMenu,
+  closeMenu
 }) {
   const totalSlides = getSlidesCount(topics);
   const currentSlide = getCurrentSlideNumber(topics, topic, lesson);
@@ -65,7 +84,7 @@ function PlayerButtons({
     if (next.isEnabled) {
       loadNextSlide({
         topic: nextSlideNumber.topic,
-        lesson: nextSlideNumber.lesson,
+        lesson: nextSlideNumber.lesson
       });
       enableBackButton();
       if (totalSlides === currentSlide + 1) {
@@ -79,7 +98,7 @@ function PlayerButtons({
     if (back.isEnabled) {
       loadPrevSlide({
         topic: backSlideNumber.topic,
-        lesson: backSlideNumber.lesson,
+        lesson: backSlideNumber.lesson
       });
       enableNextButton();
       if (currentSlide - 2 === 0) {
@@ -89,41 +108,35 @@ function PlayerButtons({
   };
 
   return (
-    <div className="footer">
+    <div style={footer}>
       <ul>
         <div align="center">
           <li
-            className={menu.isEnabled ? "menuBtn" : "menuBtnDisabled"}
+            style={menu.isEnabled ? menuBtn : menuBtnDisabled}
             onClick={onMenuClick}
           ></li>
           <li
-            className={
-              transcript.isEnabled ? "transcriptBtn" : "transcriptBtnDisabled"
-            }
+            style={transcript.isEnabled ? transcriptBtn : transcriptBtnDisabled}
             onClick={onTranscriptClick}
           ></li>
           <li
-            className={audio.isEnabled ? "audioBtn" : "audioBtnDisabled"}
+            style={audio.isEnabled ? audioBtn : audioBtnDisabled}
             // onClick={onAudioClick}
           ></li>
-          <div className="volumeSlider"></div>
+          <div style={volumeSlider}></div>
+          <li style={replay.isEnabled ? replayBtn : replayBtnDisabled}></li>
+          <li style={pause.isEnabled ? pauseBtn : pauseBtnDisabled}></li>
           <li
-            className={replay.isEnabled ? "replayBtn" : "replayBtnDisabled"}
-          ></li>
-          <li
-            className={pause.isEnabled ? "pauseBtn" : "pauseBtnDisabled"}
-          ></li>
-          <li
-            className={back.isEnabled ? "backBtn" : "backBtnDisabled"}
+            style={back.isEnabled ? backBtn : backBtnDisabled}
             onClick={onBackClick}
           ></li>
-          <div className="pagecounter">
-            <div className="currentPageNum">
+          <div style={pagecounter}>
+            <div style={currentPageNum}>
               Page {currentSlide}/{totalSlides}
             </div>
           </div>
           <li
-            className={next.isEnabled ? "nextBtn" : "nextBtnDisabled"}
+            style={next.isEnabled ? nextBtn : nextBtnDisabled}
             onClick={onNextClick}
           ></li>
         </div>
@@ -142,10 +155,10 @@ PlayerButtons.propTypes = {
   next: PropTypes.object.isRequired,
   topics: PropTypes.array.isRequired,
   topic: PropTypes.number.isRequired,
-  lesson: PropTypes.number.isRequired,
+  lesson: PropTypes.number.isRequired
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   transcript: state.player.transcript,
   menu: state.player.menu,
   audio: state.player.audio,
@@ -155,7 +168,7 @@ const mapStateToProps = (state) => ({
   next: state.player.next,
   topics: state.course.topics,
   topic: state.course.progress.topic,
-  lesson: state.course.progress.lesson,
+  lesson: state.course.progress.lesson
 });
 
 const mapDispatchToProps = {
@@ -168,7 +181,7 @@ const mapDispatchToProps = {
   enableNextButton: enableNextButton,
   loadPrevSlide: loadPrevSlide,
   disableBackButton: disableBackButton,
-  enableBackButton: enableBackButton,
+  enableBackButton: enableBackButton
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlayerButtons);

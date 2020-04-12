@@ -1,11 +1,18 @@
 import React from "react";
 
-export default function CourseTitle() {
+import {
+  courseTitleWrap,
+  courseTitleSubWrap,
+  courseTitle
+} from "./HeaderStyles";
+
+const CourseTitle = props => {
   return (
-    <div className="courseTitleWrap">
-      <div className="courseTitleSubWrap">
-        <div className="courseTitle">Scorm In React Course</div>
+    <div style={courseTitleWrap}>
+      <div style={courseTitleSubWrap}>
+        <div style={courseTitle}>Scorm In React Course</div>
       </div>
     </div>
   );
-}
+};
+export default CourseTitle;
