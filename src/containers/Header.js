@@ -4,12 +4,13 @@ import Help from "./Help";
 import ExitConfirmation from "./ExitConfirmation";
 
 import { header, logo, langBtn, langBtnDisabled } from "./HeaderStyles";
+import logoImg from "../images/logo.png";
 
 function Header({ enableHeader, toggleExitConfirmation, isExitPopupOpen }) {
   return (
     <div style={header}>
       <div style={logo}>
-        <img alt="logo" src="images/logo.png" />
+        <img alt="logo" src={logoImg} />
       </div>
 
       <CourseTitle />

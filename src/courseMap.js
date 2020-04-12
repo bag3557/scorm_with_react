@@ -5,16 +5,18 @@ export const topics = [
     screens: [
       {
         title: "Welcome",
-        transcript: "Welcome"
-        // animationName: "lishtml5",
+        transcript: "Welcome",
+        animationName: "lishtml5"
       },
       {
         title: "Course Introduction & Objectives",
-        transcript: "Course Introduction & Objectives"
+        transcript: "Course Introduction & Objectives",
+        animationName: "lishtml5"
       },
       {
         title: "Pre-Quiz",
-        transcript: "Pre-Quiz"
+        transcript: "Pre-Quiz",
+        animationName: "lishtml5"
       }
     ]
   },
@@ -26,15 +28,18 @@ export const topics = [
     screens: [
       {
         title: "Welcome",
-        transcript: "Welcome"
+        transcript: "Welcome",
+        animationName: "lishtml5"
       },
       {
         title: "Course Introduction & Objectives",
-        transcript: "Course Introduction & Objectives"
+        transcript: "Course Introduction & Objectives",
+        animationName: "lishtml5"
       },
       {
         title: "Pre-Quiz",
-        transcript: "Pre-Quiz"
+        transcript: "Pre-Quiz",
+        animationName: "lishtml5"
       }
     ]
   },
@@ -46,15 +51,18 @@ export const topics = [
     screens: [
       {
         title: "Welcome",
-        transcript: "Welcome"
+        transcript: "Welcome",
+        animationName: "lishtml5"
       },
       {
         title: "Course Introduction & Objectives",
-        transcript: "Course Introduction & Objectives"
+        transcript: "Course Introduction & Objectives",
+        animationName: "lishtml5"
       },
       {
         title: "Pre-Quiz",
-        transcript: "Pre-Quiz"
+        transcript: "Pre-Quiz",
+        animationName: "lishtml5"
       }
     ]
   },
@@ -66,15 +74,18 @@ export const topics = [
     screens: [
       {
         title: "Welcome",
-        transcript: "Welcome"
+        transcript: "Welcome",
+        animationName: "lishtml5"
       },
       {
         title: "Course Introduction & Objectives",
-        transcript: "Course Introduction & Objectives"
+        transcript: "Course Introduction & Objectives",
+        animationName: "lishtml5"
       },
       {
         title: "Pre-Quiz",
-        transcript: "Pre-Quiz"
+        transcript: "Pre-Quiz",
+        animationName: "lishtml5"
       }
     ]
   },
@@ -86,15 +97,18 @@ export const topics = [
     screens: [
       {
         title: "Welcome",
-        transcript: "Welcome"
+        transcript: "Welcome",
+        animationName: "lishtml5"
       },
       {
         title: "Course Introduction & Objectives",
-        transcript: "Course Introduction & Objectives"
+        transcript: "Course Introduction & Objectives",
+        animationName: "lishtml5"
       },
       {
         title: "Pre-Quiz",
-        transcript: "Pre-Quiz"
+        transcript: "Pre-Quiz",
+        animationName: "lishtml5"
       }
     ]
   },
@@ -106,15 +120,18 @@ export const topics = [
     screens: [
       {
         title: "Welcome",
-        transcript: "Welcome"
+        transcript: "Welcome",
+        animationName: "lishtml5"
       },
       {
         title: "Course Introduction & Objectives",
-        transcript: "Course Introduction & Objectives"
+        transcript: "Course Introduction & Objectives",
+        animationName: "lishtml5"
       },
       {
         title: "Pre-Quiz",
-        transcript: "Pre-Quiz"
+        transcript: "Pre-Quiz",
+        animationName: "lishtml5"
       }
     ]
   },
@@ -126,15 +143,18 @@ export const topics = [
     screens: [
       {
         title: "Welcome",
-        transcript: "Welcome"
+        transcript: "Welcome",
+        animationName: "lishtml5"
       },
       {
         title: "Course Introduction & Objectives",
-        transcript: "Course Introduction & Objectives"
+        transcript: "Course Introduction & Objectives",
+        animationName: "lishtml5"
       },
       {
         title: "Pre-Quiz",
-        transcript: "Pre-Quiz"
+        transcript: "Pre-Quiz",
+        animationName: "lishtml5"
       }
     ]
   }
